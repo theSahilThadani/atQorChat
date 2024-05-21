@@ -90,22 +90,22 @@ const configureIdentityProvider = () => {
   }
 
 // Adding Google Auth Provider
-if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
-  providers.push(
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-      async profile(profile) {
-        const newProfile = {
-          ...profile,
-          id: profile.sub,
-          isAdmin: adminEmails?.includes(profile.email.toLowerCase())
+  if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
+    providers.push(
+      GoogleProvider({
+        clientId: process.env.GOOGLE_CLIENT_ID!,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+        async profile(profile) {
+          const newProfile = {
+            ...profile,
+            id: profile.sub,
+            isAdmin: adminEmails?.includes(profile.email.toLowerCase())
+          }
+          return newProfile;
         }
-        return newProfile;
-      }
-    })
-  );
-}
+      })
+    );
+  }
 
   return providers;
 };
