@@ -19,10 +19,10 @@ const MenuBar = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
+<div
     ref={ref}
     className={cn(
-      "bg-background z-10 p-2 w-16 flex flex-col justify-between h-full items-stretch border-r",
+      "bg-zinc-900 z-10 p-2 w-16 flex flex-col justify-between h-full items-stretch",
       className
     )}
     {...props}
@@ -64,6 +64,7 @@ MenuItem.displayName = "MenuItem";
 const menuIconProps: LucideProps = {
   size: 24,
   strokeWidth: 1.6,
+  stroke:'white',
 };
 
 export { Menu, MenuBar, MenuItem, MenuItemContainer, menuIconProps };

@@ -32,7 +32,7 @@ export const ChatMenuItem: FC<ChatMenuItemProps> = (props) => {
   });
 
   return (
-    <div className="flex group hover:bg-muted pr-3 text-muted-foreground rounded-sm hover:text-muted-foreground">
+    <div className="flex group hover:bg-sky-600 pr-3 text-white rounded-sm hover:text-white rounded-xl">
       <Link
         href={props.href}
         className={cn(

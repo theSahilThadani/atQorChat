@@ -37,7 +37,7 @@ export const ChatContextMenu = () => {
         {isLoading ? (
           <LoadingIndicator isLoading={isLoading} />
         ) : (
-          <MoreVertical size={18} aria-label="Chat Menu Dropdown Menu"/>
+          <MoreVertical size={18} aria-label="Chat Menu Dropdown Menu" stroke="white"/>
         )}
       </DropdownMenuTrigger>
       <DropdownMenuContent side="right" align="start">
